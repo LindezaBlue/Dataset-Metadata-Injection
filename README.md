@@ -1,6 +1,6 @@
 # Dataset Metadata Injection Tool
 
-A lightweight Python tool that adds Kohya/A1111-compatible tag frequency metadata to LoRA *(Low-Rank Adaptation)* model files. This tool scans your training dataset and embeds tag statistics directly into your `.safetensors` LoRA files, making them compatible with automatic tag completion and other metadata-dependent features in AI image generation tools. This fixes missing tags in your dataset from lora training tools like AI-Toolkit not showing up in A111/Forge/ForgeNeo.
+A lightweight Python tool that adds Kohya/A1111-compatible tag frequency metadata to LoRA *(Low-Rank Adaptation)* model files. This tool scans your training dataset and embeds tag statistics directly into your `.safetensors` LoRA files, making them compatible with automatic tag completion and other metadata-dependent features in AI image generation tools. This tool fixes missing tag metadata in LoRA files trained with AI-Toolkit or similar programs, allowing them to display properly in A111/Forge/ForgeNeo.
 
 **Example of tags added:**
 <img width="883" height="218" alt="{4EE000A4-C2F9-4D28-812C-6850E402845D}" src="https://github.com/user-attachments/assets/334f5a71-5664-42bf-925b-108605d02fe5" />
@@ -27,7 +27,6 @@ A lightweight Python tool that adds Kohya/A1111-compatible tag frequency metadat
 1. **Download or clone this repository:**
    ```bash
    git clone https://github.com/LindezaBlue/Dataset-Metadata-Injection.git
-   cd Dataset-Metadata-Injection
    ```
 
 2. **Ensure Python 3.11+ is installed** on your system. Download from [python.org](https://www.python.org/downloads/) if needed.
