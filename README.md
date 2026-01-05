@@ -163,3 +163,8 @@ If you find this tool helpful, consider:
 ---
 
 **Note**: This tool is designed for AI-Toolkit trained LoRAs that may be missing metadata. It does not modify the model weights themselves, only the metadata container.
+
+____________________________________________________________
+## TODO List:
+- [ ] Implement a refrenced .json file for dataset folder to make editing files easier
+- [ ] Create a Gradio interface for users to interact with to make this run off a web interface instead of the CLI for simplicity
