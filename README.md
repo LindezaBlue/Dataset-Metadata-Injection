@@ -147,10 +147,20 @@ This tool adds the following metadata fields to your LoRA:
 
 ## Technical Details
 
-- **Dependencies**: `safetensors`, `torch` (CPU), `packaging`
-- **Python Version**: 3.11+ (automatically detected)
-- **Framework**: PyTorch (CPU-only for minimal overhead)
-- **Metadata Format**: Kohya SS / Automatic1111 WebUI compatible
+- **Python Version**: 3.11+ (automatically detected from your system)
+- **Dependencies** (auto-installed in a virtual environment on first run):
+  - `safetensors` — for safe loading/saving of model files
+  - `torch` — CPU-only version (keeps overhead low, no GPU required)
+  - `packaging` — for handling version checks and utilities
+  - `gradio` — powers the intuitive web-based interface
+- **Framework**: PyTorch (CPU-only for minimal resource use)
+- **Metadata Format**: Kohya SS / Automatic1111 WebUI compatible (including `ss_tag_frequency`, `ss_dataset_dirs`, etc.)
+- **Platform**: Windows-focused (uses batch files for easy automation)
+- **User Interfaces**:
+  - Config-based script: Launched via `Run Injection.bat`
+  - Web-based Gradio UI: Launched via `Run Gradio UI.bat` — guided workflow for selecting datasets/LoRAs, automatic tag scanning, previews, and metadata injection
+- **Virtual Environment**: Automatically created in a `venv/` folder on first run—deletes and recreates if needed (shared across both interfaces)
+- **Execution Notes**: Non-destructive process; outputs a new LoRA file with `_with_tags` suffix in the `Updated LoRA/` folder
 
 ## Contributing
 
