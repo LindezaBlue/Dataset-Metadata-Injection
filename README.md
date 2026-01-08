@@ -105,7 +105,8 @@ It mirrors the Windows batch file, creating a virtual environment, installing de
 
 ```
 Dataset-Metadata-Injection/
-├── Run Gradio UI.bat           # Launch web interface
+├── Run Gradio UI.bat          # Launch web interface
+├── run_gradio_ui.sh           # Launch web interface (Linux, in testing)
 ├── gradio_ui.py               # Gradio interface code
 ├── Metadata_Injection.py      # Core injection logic
 ├── requirements.txt           # Python dependencies
