@@ -44,49 +44,51 @@ A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metada
 
 ## 📖 Usage Guide
 
-### Option 1: Gradio Web Interface (Recommended)
+### Gradio Web Interface
 
 The easiest way to use this tool is through the visual web interface.
 
-1. **Launch the UI:**
-   - Double-click `Run Gradio UI.bat`
-   - Your browser will open automatically to `http://127.0.0.1:7860`
+### Step 1: Prepare Your Files
 
-2. **Follow the guided workflow:**
-   - Select your dataset subfolder from the dropdown
-   - Choose your LoRA file to repair
-   - Click "Scan Dataset" to analyze tag frequencies
-   - Review the tag preview
-   - Click "Inject Metadata" to create your updated LoRA
+1. Place you dataset subfolder inside `Dataset to Repair/`  
+   Example: `Dataset to Repair/my_character/`  
+   - Place all your training images (`.png`, `.jpg`, `.jpeg`) in this folder
+   - Ensure each image has a matching `.txt` caption file with comma-separated tags  
+     Example: `image1.png` → `image1.txt` containing `1girl, blue hair, smiling, outdoors`
+
+2. Place your original LoRA file (`.safetensors` format) directly in the `Dataset to Repair/` folder, **not inside the model subfolder!**
+
+### Step 2: Launch the Gradio Interface
+
+1. Double-click `Run Gradio UI.bat`  
+   The batch file will automatically:  
+   - Detect your Python installation  
+   - Create a virtual environment *(first run only)*
+   - Install required dependencies *(gradio, safetensors, torch CPU-only, etc.—first run only)*  
+   - Launch the web interface in your default browser at **http://127.0.0.1:7860**
+
+### Step 3: Use the Web Interface
+
+The interface guides you step-by-step:
+
+1. **Select your files**  
+   - Choose your **Dataset Subfolder Name** from the dropdown
+   - Choose your **LoRA Filename** from the dropdown  
+   - Click **Refresh File Lists** if your files don't appear yet
+
+2. **Scan the dataset**  
+   - Click **Scan Dataset**  
+   - The tool will automatically read all `.txt` caption files and count tag frequencies  
+   - Results appear in the **Tag Frequencies** box
+
+3. **Inject the metadata**  
+   - Click **Inject Metadata & Save**  
+   - A new LoRA file with embedded metadata will be created  
+   - Find it in the `Updated LoRA/` folder (filename ends with `_with_tags.safetensors`)
+
+5. When you're done, just close the browser tab, and Terminal/CLI to exit the program.
 
 ![Gradio Interface](https://private-user-images.githubusercontent.com/141217866/533147921-b6fc282b-9b60-4678-9efe-7a1b5f093eb8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc4OTI3MDUsIm5iZiI6MTc2Nzg5MjQwNSwicGF0aCI6Ii8xNDEyMTc4NjYvNTMzMTQ3OTIxLWI2ZmMyODJiLTliNjAtNDY3OC05ZWZlLTdhMWI1ZjA5M2ViOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwOFQxNzEzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ODEzM2FlNDJiYWQyNDgxNGQ3MTg2ZDQ3YmQwMzE2OGVjNmE5OTljZWM3ODYzOTNkMTQ4OGI5YTQ0N2M3YzhmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.1s54RbRuNyf7W8wlNEpRVULJZohx7aoReJn4QGA_lXg)
-
-### Option 2: CLI Script
-
-For automation or advanced users who prefer command-line operation.
-
-1. **Organize your files:**
-   ```
-   Dataset-Metadata-Injection/
-   ├── Dataset to Repair/
-   │   ├── my_dataset/          # Your dataset folder
-   │   │   ├── image1.png
-   │   │   ├── image1.txt       # Tags: "1girl, blue hair, smiling"
-   │   │   └── ...
-   │   └── my_lora.safetensors  # Your original LoRA
-   └── Updated LoRA/            # Output (auto-created)
-   ```
-
-2. **Configure the script:**
-   Open `Metadata_Injection.py` and update:
-   ```python
-   dataset_subfolder = "my_dataset"           # Your folder name
-   original_lora_filename = "my_lora.safetensors"  # Your LoRA file
-   ```
-
-3. **Run the injection:**
-   - Double-click `Run Injection.bat`
-   - Find your updated file in `Updated LoRA/` with `_with_tags` suffix
 
 ---
 
@@ -95,12 +97,12 @@ For automation or advanced users who prefer command-line operation.
 ```
 Dataset-Metadata-Injection/
 ├── Run Gradio UI.bat           # Launch web interface
-├── Run Injection.bat           # Run CLI script
 ├── gradio_ui.py               # Gradio interface code
 ├── Metadata_Injection.py      # Core injection logic
 ├── requirements.txt           # Python dependencies
 ├── Dataset to Repair/         # Input folder for your files
 │   └── [your_dataset]/
+│   └── [your_model]/
 └── Updated LoRA/              # Output folder (auto-created)
 ```
 
