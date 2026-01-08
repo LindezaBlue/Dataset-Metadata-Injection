@@ -89,7 +89,7 @@ class MetadataInjector:
 def create_ui():
     injector = MetadataInjector()
     
-    with gr.Blocks(title="Dataset Metadata Injection Tool", theme=gr.themes.Soft()) as demo:
+    with gr.Blocks(title="Dataset Metadata Injection Tool") as demo:
         gr.Markdown("""
         # 🏷️ Dataset Metadata Injection Tool
         Add Kohya/A1111-compatible tag frequency metadata to your LoRA files
@@ -124,14 +124,16 @@ def create_ui():
                 scan_status = gr.Textbox(label="Scan Status", interactive=False)
                 
             with gr.Column(scale=1):
-                gr.Markdown("### 🏷️ Step 2: Review & Edit Tags")
+                gr.Markdown("### 🏷️ Step 2: Review Tags")
                 
                 tag_display = gr.JSON(
-                    label="Tag Frequencies (Editable)",
+                    label="Tag Frequencies",
                     value={}
                 )
                 
-                gr.Markdown("*You can edit the JSON above to modify tag counts*")
+                gr.Markdown(
+                    "*This displays the tag frequency data detected from your dataset*"
+                )
         
         gr.Markdown("### 🚀 Step 3: Inject Metadata")
         
@@ -225,5 +227,6 @@ if __name__ == "__main__":
         server_name="127.0.0.1",
         server_port=7860,
         share=False,
-        show_error=True
-    )
+        show_error=True,
+        theme=gr.themes.Soft()
+)
