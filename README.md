@@ -5,6 +5,24 @@ A lightweight Python tool that adds Kohya/A1111-compatible tag frequency metadat
 **Example of tags added:**
 <img width="883" height="218" alt="{4EE000A4-C2F9-4D28-812C-6850E402845D}" src="https://github.com/user-attachments/assets/334f5a71-5664-42bf-925b-108605d02fe5" />
 
+_____________________________________
+## New Gradio Interface — Easier, Faster, and More Visual!~
+The Dataset Metadata Injection Tool now includes an intuitive Gradio web interface, making it easier than ever to add Kohya/A1111-compatible tag frequency metadata to your LoRA .safetensors files. Instead of running everything through the command line, you can now manage your workflows visually with a clean, guided UI.
+
+### 🛠️ What the Interface Lets You Do
+1️⃣ Guided Step-By-Step Workflow
+- The interface walks you through the entire process:
+- Select your dataset subfolder
+- Choose the LoRA file to repair
+- Automatically scan your dataset for tag frequencies
+- Preview, validate, and inject metadata
+
+2️⃣ Automatic Dataset Scanning
+With a single click, the tool scans your dataset and builds a frequency map of all detected tags. No guessing, no manual counting.
+
+### **Interface View:**
+<img width="1518" height="841" alt="{43737911-291A-45C5-AE86-BA4559C522C3}" src="https://github.com/user-attachments/assets/b6fc282b-9b60-4678-9efe-7a1b5f093eb8" />
+
 
 ## Features
 
@@ -166,5 +184,5 @@ If you find this tool helpful, consider:
 
 ____________________________________________________________
 ## TODO List:
-- [ ] Implement a refrenced .json file for dataset folder to make editing files easier
-- [ ] Create a Gradio interface for users to interact with to make this run off a web interface instead of the CLI for simplicity
+- [X] ~~Implement a refrenced .json file for dataset folder to make editing files easier~~
+- [X] ~~Create a Gradio interface for users to interact with to make this run off a web interface instead of the CLI for simplicity~~
