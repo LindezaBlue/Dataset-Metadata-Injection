@@ -1,8 +1,9 @@
 # Dataset Metadata Injection Tool
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-orange.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Platform: Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
+[![Platform: Linux](https://img.shields.io/badge/platform-Linux-brightgreen.svg)](https://www.kernel.org/)
 
 A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metadata to LoRA (Low-Rank Adaptation) safetensors files. This tool fixes missing tag metadata in LoRA files trained with AI-Toolkit or similar programs, ensuring proper display in A1111/Forge/ForgeNeo.
 
