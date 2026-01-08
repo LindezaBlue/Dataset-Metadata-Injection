@@ -14,7 +14,6 @@ A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metada
 
 - **Automatic Tag Frequency Calculation** — Scans caption files and counts tag occurrences across your dataset
 - **Kohya/A1111 Compatible** — Adds standard metadata fields (`ss_tag_frequency`, `ss_dataset_dirs`, etc.)
-- **Dual Interface Options** — Choose between CLI script or intuitive Gradio web UI
 - **Non-Destructive Processing** — Creates new files with metadata while preserving originals
 - **Smart Dependency Management** — Auto-installs required packages in isolated virtual environment
 - **Portable & User-Friendly** — Works from any folder with clear error messages
@@ -103,7 +102,7 @@ Dataset-Metadata-Injection/
 ├── Dataset to Repair/         # Input folder for your files
 │   └── [your_dataset]/
 │   └── [your_model]/
-└── Updated LoRA/              # Output folder (auto-created)
+└── Updated LoRA/              # Output folder
 ```
 
 ---
@@ -134,7 +133,7 @@ All dependencies are auto-installed in an isolated virtual environment:
 
 - **Python:** 3.11 or later (auto-detected from `%LOCALAPPDATA%\Programs\Python`)
 - **Disk Space:** ~500MB for virtual environment
-- **Platform:** Windows (macOS/Linux support in development)
+- **Platform:** Windows *(Linux support in development)*
 
 ---
 
@@ -146,7 +145,6 @@ All dependencies are auto-installed in an isolated virtual environment:
 
 **Solutions:**
 - Verify your dataset folder exists in `Dataset to Repair/`
-- Check folder/file names match exactly (case-sensitive)
 - Ensure `.safetensors` file is in `Dataset to Repair/`, not in a subfolder
 
 ### "Python not found"
@@ -183,6 +181,7 @@ Ensure your `.txt` files use comma-separated tags:
 - [ ] Support for Linux platforms
 - [ ] Tag frequency visualization charts
 - [ ] Export/import metadata presets
+- [ ] Any suggestions from the community 
 
 ---
 
@@ -199,9 +198,13 @@ Contributions are welcome! Here's how you can help:
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the  
+**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.  
+See the [LICENSE file](https://github.com/LindezaBlue/Dataset-Metadata-Injection/tree/main?tab=License-1-ov-file) for full details.
 
-You are free to use, modify, and distribute this software with proper attribution.
+You are free to **use, modify, and share** this project, **but only for non-commercial purposes**, and you must **give proper credit** to the original author.  
+
+### If you remix or build upon this work, you must distribute your contributions under the **same license**!
 
 ---
 
