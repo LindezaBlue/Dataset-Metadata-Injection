@@ -89,6 +89,15 @@ The interface guides you step-by-step:
 
 ![Gradio Interface](https://private-user-images.githubusercontent.com/141217866/533147921-b6fc282b-9b60-4678-9efe-7a1b5f093eb8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc4OTI3MDUsIm5iZiI6MTc2Nzg5MjQwNSwicGF0aCI6Ii8xNDEyMTc4NjYvNTMzMTQ3OTIxLWI2ZmMyODJiLTliNjAtNDY3OC05ZWZlLTdhMWI1ZjA5M2ViOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwOFQxNzEzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ODEzM2FlNDJiYWQyNDgxNGQ3MTg2ZDQ3YmQwMzE2OGVjNmE5OTljZWM3ODYzOTNkMTQ4OGI5YTQ0N2M3YzhmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.1s54RbRuNyf7W8wlNEpRVULJZohx7aoReJn4QGA_lXg)
 
+### Linux Users
+
+A launch script `run_gradio_ui.sh` is provided for Linux systems.  
+It mirrors the Windows batch file, creating a virtual environment, installing dependencies, and launching the Gradio UI.  
+
+⚠️ **Linux users, please test this script and report any issues**, especially with automatic browser opening or dependency installation.
+*(I currently am not able to test if this works on Linux systems so feedback is appreciated, Thank you!)*
+
+
 ---
 
 ## 📂 Project Structure
@@ -178,7 +187,7 @@ Ensure your `.txt` files use comma-separated tags:
 - [x] ~~Implement referenced .json config file for easier editing~~
 - [x] ~~Create Gradio web interface for simplified user experience~~
 - [ ] Add batch processing for multiple LoRAs
-- [ ] Support for Linux platforms
+- [ ] Support for Linux platforms *(In-Progress, Needs Testers)*
 - [ ] Tag frequency visualization charts
 - [ ] Export/import metadata presets
 - [ ] Any suggestions from the community 
