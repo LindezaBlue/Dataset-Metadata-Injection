@@ -26,7 +26,7 @@ A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metada
 ### Prerequisites
 
 - **Python 3.11+** — [Download here](https://www.python.org/downloads/)
-- **Windows OS** — Batch file automation (macOS/Linux support planned)
+- **Windows OS** — Batch file automation (Linux support planned)
 - **.safetensors LoRA file** — Your trained model
 - **Training dataset** — Images with corresponding `.txt` caption files
 
