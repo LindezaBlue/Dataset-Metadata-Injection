@@ -115,8 +115,8 @@ echo Press Ctrl+C to stop the server
 echo ========================================
 echo.
 
-:: Launch browser after 5 seconds in background
-start /B cmd /c "timeout /t 5 /nobreak > nul && start http://127.0.0.1:7860"
+:: Launch browser after 7 seconds in background
+start /B cmd /c "timeout /t 7 /nobreak > nul && start http://127.0.0.1:7860"
 
 :: Start Gradio server
 python gradio_ui.py
@@ -134,3 +134,4 @@ echo Web UI closed.
 echo You can deactivate venv with: deactivate
 echo.
 pause
+
