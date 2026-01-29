@@ -47,11 +47,11 @@ source venv/bin/activate
 # Upgrade pip
 pip install --upgrade pip
 
-# Check dependencies
-python -c "import gradio, safetensors, torch, packaging" 2>/dev/null
+# Check dependencies (added pytz here so it catches the missing import)
+python -c "import gradio, safetensors, torch, packaging, pytz" 2>/dev/null
 if [ $? -ne 0 ]; then
     echo "Dependencies missing. Installing now..."
-    pip install packaging safetensors gradio
+    pip install packaging safetensors gradio pytz
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
     if [ $? -ne 0 ]; then
         echo "ERROR: Dependency installation failed."
