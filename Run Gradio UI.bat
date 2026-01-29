@@ -79,7 +79,7 @@ echo.
 
 :: Check if dependencies are installed
 echo Checking dependencies...
-python -c "import gradio, safetensors, torch, packaging" 2>nul
+python -c "import gradio, safetensors, torch, packaging, pytz" 2>nul
 if errorlevel 1 (
     echo Dependencies missing. Installing now...
     echo.
@@ -89,6 +89,7 @@ if errorlevel 1 (
     python -m pip install packaging
     python -m pip install safetensors
     python -m pip install gradio
+	python -m pip install pytz
     python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
     
     if errorlevel 1 (
