@@ -10,7 +10,7 @@ import torch
 class MetadataInjector:
     def __init__(self):
         self.base_dir = Path(__file__).parent
-        self.dataset_dir = self.base_dir / "Dataset to Repair"
+        self.dataset_dir = self.base_dir / "Model to Repair"
         self.output_dir = self.base_dir / "Updated LoRA"
         self.output_dir.mkdir(exist_ok=True)
         
