@@ -13,9 +13,14 @@ A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metada
 
 ## 🌟 Features
 
+- **Two Operating Modes** — Dataset mode (with caption files) or Manual mode (trigger words only)
 - **Automatic Tag Frequency Calculation** — Scans caption files and counts tag occurrences across your dataset
+- **Manual Trigger Word Input** — Add metadata without needing the original training dataset
+- **Native Folder Browser** — Easy dataset selection with visual folder picker
+- **Flexible Path Support** — Use subfolders or any custom path on your system
 - **Kohya/A1111 Compatible** — Adds standard metadata fields (`ss_tag_frequency`, `ss_dataset_dirs`, etc.)
 - **Non-Destructive Processing** — Creates new files with metadata while preserving originals
+- **Live Preview & Validation** — Real-time feedback on manual tag input
 - **Smart Dependency Management** — Auto-installs required packages in isolated virtual environment
 - **Portable & User-Friendly** — Works from any folder with clear error messages
 
@@ -28,7 +33,7 @@ A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metada
 - **Python 3.11+** — [Download here](https://www.python.org/downloads/)
 - **Windows OS** — Batch file automation (Linux support planned)
 - **.safetensors LoRA file** — Your trained model
-- **Training dataset** — Images with corresponding `.txt` caption files
+- **Training dataset** (optional) — Images with corresponding `.txt` caption files (only needed for Normal Mode)
 
 ### Installation
 
@@ -50,13 +55,26 @@ The easiest way to use this tool is through the visual web interface.
 
 ### Step 1: Prepare Your Files
 
-1. Place you dataset subfolder inside `Dataset to Repair/`  
-   Example: `Dataset to Repair/my_character/`  
+**On first run, the program automatically creates two folders:**
+- `Model to Repair/` — Place your LoRA files here
+- `Updated LoRA/` — Updated files will be saved here
+
+#### For Normal Mode (with dataset):
+
+1. Place your LoRA file (`.safetensors` format) in the `Model to Repair/` folder
+
+2. (Optional) Place your dataset subfolder inside `Model to Repair/`  
+   Example: `Model to Repair/my_character/`  
    - Place all your training images (`.png`, `.jpg`, `.jpeg`) in this folder
    - Ensure each image has a matching `.txt` caption file with comma-separated tags  
      Example: `image1.png` → `image1.txt` containing `1girl, blue hair, smiling, outdoors`
 
-2. Place your original LoRA file (`.safetensors` format) directly in the `Dataset to Repair/` folder, **not inside the model subfolder!**
+   **OR** use a dataset folder anywhere on your system (can browse to it in the UI)
+
+#### For Manual Mode (without dataset):
+
+1. Place your LoRA file (`.safetensors` format) in the `Model to Repair/` folder
+2. That's it! You'll enter trigger words directly in the UI
 
 ### Step 2: Launch the Gradio Interface
 
@@ -69,24 +87,46 @@ The easiest way to use this tool is through the visual web interface.
 
 ### Step 3: Use the Web Interface
 
-The interface guides you step-by-step:
+The interface guides you step-by-step with two modes:
 
-1. **Select your files**  
-   - Choose your **Dataset Subfolder Name** from the dropdown
-   - Choose your **LoRA Filename** from the dropdown  
-   - Click **Refresh File Lists** if your files don't appear yet
+#### Normal Mode (with dataset):
 
-2. **Scan the dataset**  
-   - Click **Scan Dataset**  
+1. **Select your LoRA file**  
+   - Choose your **LoRA Filename** from the dropdown
+
+2. **Select your dataset**  
+   - Choose a **Dataset Subfolder** from the dropdown, OR
+   - Click **📁 Select Dataset Folder** to browse to any folder, OR
+   - Paste a custom path directly
+
+3. **Scan the dataset**  
+   - Click **🔍 Scan Dataset / Parse Tags**  
    - The tool will automatically read all `.txt` caption files and count tag frequencies  
-   - Results appear in the **Tag Frequencies** box
+   - Results appear in the **Tag Frequencies** box with status feedback
 
-3. **Inject the metadata**  
-   - Click **Inject Metadata & Save**  
+4. **Inject the metadata**  
+   - Click **💾 Inject Metadata & Save**  
    - A new LoRA file with embedded metadata will be created  
    - Find it in the `Updated LoRA/` folder (filename ends with `_with_tags.safetensors`)
 
-5. When you're done, just close the browser tab, and Terminal/CLI to exit the program.
+#### Manual Mode (without dataset):
+
+1. **Select your LoRA file**  
+   - Choose your **LoRA Filename** from the dropdown
+
+2. **Enable manual mode**  
+   - Check the **"Manual trigger word mode"** checkbox
+
+3. **Enter trigger words**  
+   - Type your trigger words (comma-separated) in the text box
+   - Set the tag frequency (default: 1)
+   - Watch the **live preview** update in real-time
+
+4. **Inject the metadata**  
+   - When the status shows 🟢 **Ready**, click **💾 Inject Metadata & Save**
+   - Find the updated LoRA in `Updated LoRA/` folder
+
+5. When you're done, just close the browser tab and Terminal/CLI to exit the program.
 
 ![Gradio Interface](https://private-user-images.githubusercontent.com/141217866/533147921-b6fc282b-9b60-4678-9efe-7a1b5f093eb8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc4OTI3MDUsIm5iZiI6MTc2Nzg5MjQwNSwicGF0aCI6Ii8xNDEyMTc4NjYvNTMzMTQ3OTIxLWI2ZmMyODJiLTliNjAtNDY3OC05ZWZlLTdhMWI1ZjA5M2ViOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwOFQxNzEzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ODEzM2FlNDJiYWQyNDgxNGQ3MTg2ZDQ3YmQwMzE2OGVjNmE5OTljZWM3ODYzOTNkMTQ4OGI5YTQ0N2M3YzhmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.1s54RbRuNyf7W8wlNEpRVULJZohx7aoReJn4QGA_lXg)
 
@@ -105,15 +145,15 @@ It mirrors the Windows batch file, creating a virtual environment, installing de
 
 ```
 Dataset-Metadata-Injection/
-├── Run Gradio UI.bat          # Launch web interface
-├── run_gradio_ui.sh           # Launch web interface (Linux, in testing)
-├── gradio_ui.py               # Gradio interface code
-├── Metadata_Injection.py      # Core injection logic
-├── requirements.txt           # Python dependencies
-├── Dataset to Repair/         # Input folder for your files
-│   └── [your_dataset]/
-│   └── [your_model]/
-└── Updated LoRA/              # Output folder
+├── Run Gradio UI.bat           # Launch web interface (Windows)
+├── run_gradio_ui.sh            # Launch web interface (Linux)
+├── gradio_ui.py                # Gradio interface code
+├── Metadata_Injection.py       # Legacy CLI version
+├── requirements.txt            # Python dependencies
+├── Model to Repair/            # Input folder (auto-created)
+│   ├── your_lora.safetensors   # Your LoRA files
+│   └── [dataset_folders]/      # Optional: dataset subfolders
+└── Updated LoRA/               # Output folder (auto-created)
 ```
 
 ---
@@ -155,8 +195,9 @@ All dependencies are auto-installed in an isolated virtual environment:
 **Problem:** Files not found in expected locations
 
 **Solutions:**
-- Verify your dataset folder exists in `Dataset to Repair/`
-- Ensure `.safetensors` file is in `Dataset to Repair/`, not in a subfolder
+- Verify your LoRA file is in the `Model to Repair/` folder
+- For Normal Mode: verify dataset folder exists (in `Model to Repair/` or custom path)
+- For Manual Mode: no dataset needed, just the LoRA file
 
 ### "Python not found"
 
@@ -188,8 +229,10 @@ Ensure your `.txt` files use comma-separated tags:
 
 - [x] ~~Implement referenced .json config file for easier editing~~
 - [x] ~~Create Gradio web interface for simplified user experience~~
+- [x] ~~Add manual trigger word mode (no dataset required)~~
+- [x] ~~Add native folder browser for easy path selection~~
+- [x] ~~Support for Linux platforms~~
 - [ ] Add batch processing for multiple LoRAs
-- [ ] Support for Linux platforms *(In-Progress, Needs Testers)*
 - [ ] Tag frequency visualization charts
 - [ ] Export/import metadata presets
 - [ ] Any suggestions from the community 
