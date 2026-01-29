@@ -152,7 +152,7 @@ Dataset-Metadata-Injection/
 ├── Run Gradio UI.bat           # Launch web interface (Windows)
 ├── run_gradio_ui.sh            # Launch web interface (Linux)
 ├── gradio_ui.py                # Gradio interface code
-├── Metadata_Injection.py       # Legacy CLI version
+├── Metadata_Injection.py       # Backend code (where the magic happens)
 ├── requirements.txt            # Python dependencies
 ├── Model to Repair/            # Input folder (auto-created)
 │   ├── your_lora.safetensors   # Your LoRA files
