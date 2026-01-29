@@ -7,7 +7,10 @@
 
 A lightweight Python tool for adding Kohya/A1111-compatible tag frequency metadata to LoRA (Low-Rank Adaptation) safetensors files. This tool fixes missing tag metadata in LoRA files trained with AI-Toolkit or similar programs, ensuring proper display in A1111/Forge/ForgeNeo.
 
-![Tag Metadata Example](https://private-user-images.githubusercontent.com/141217866/531762017-334f5a71-5664-42bf-925b-108605d02fe5.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc4OTI3MDUsIm5iZiI6MTc2Nzg5MjQwNSwicGF0aCI6Ii8xNDEyMTc4NjYvNTMxNzYyMDE3LTMzNGY1YTcxLTU2NjQtNDJiZi05MjViLTEwODYwNWQwMmZlNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwOFQxNzEzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZjI4NGYzNTdiMzI0ZDhmOTAyZTg2ODZlN2UyZTlmZGRiNDc0NGFjOTllZjNmMzc4NTAzMmJkNzQ5NDQyYjQzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nyeREqV3xFyw4nQZkmqKXalNkBtDKnz3X_Mxe9sqB3A)
+
+![Missing_Tags](https://github.com/user-attachments/assets/27dc2918-b1bc-431e-bab7-64ccc79ecfb3)
+
+![Tag Metadata Example](https://github.com/user-attachments/assets/c6432b3f-cfaa-42f3-b16b-63e33b023c35)
 
 ---
 
@@ -127,8 +130,9 @@ The interface guides you step-by-step with two modes:
    - Find the updated LoRA in `Updated LoRA/` folder
 
 5. When you're done, just close the browser tab and Terminal/CLI to exit the program.
-
-![Gradio Interface](https://private-user-images.githubusercontent.com/141217866/533147921-b6fc282b-9b60-4678-9efe-7a1b5f093eb8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc4OTI3MDUsIm5iZiI6MTc2Nzg5MjQwNSwicGF0aCI6Ii8xNDEyMTc4NjYvNTMzMTQ3OTIxLWI2ZmMyODJiLTliNjAtNDY3OC05ZWZlLTdhMWI1ZjA5M2ViOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEwOFQxNzEzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ODEzM2FlNDJiYWQyNDgxNGQ3MTg2ZDQ3YmQwMzE2OGVjNmE5OTljZWM3ODYzOTNkMTQ4OGI5YTQ0N2M3YzhmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.1s54RbRuNyf7W8wlNEpRVULJZohx7aoReJn4QGA_lXg)
+   
+## Interface Preview:
+![interface_preview](https://github.com/user-attachments/assets/a0434cf6-1e17-46ae-bb60-a2ecd0790c10)
 
 ### Linux Users
 
